@@ -2,12 +2,12 @@ package com.project.payment.core.implementation;
 
 import com.project.payment.api.model.PaymentRequest;
 import com.project.payment.api.model.PaymentResponse;
-import com.project.payment.core.interfaces.PaymentService;
+import com.project.payment.core.interfaces.PaymentServiceProcessor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PaymentServiceImpl implements PaymentService {
+public class PaymentServiceProcessorCore implements PaymentServiceProcessor {
     @Override
     public PaymentResponse authorizePayment(PaymentRequest paymentRequest) {
         if(paymentRequest.getCardCredentials().length() < 5 || paymentRequest.getCardCredentials().length() > 10) {
